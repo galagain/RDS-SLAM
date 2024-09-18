@@ -1,8 +1,8 @@
 <launch>
-    <arg name="PATH_TO_VOCABULARY" value="$(find rds_slam)/Vocabulary/ORBvoc.txt" />
-    <arg name="PATH_TO_SETTINGS_FILE" value="$(find rds_slam)/config/RGB-D/TUM3.yaml" />
-    <arg name="PATH_TO_SEQUENCE" value="/root/Dataset/TUM/freiburg3/rgbd_dataset_freiburg3_walking_xyz" />
-    <arg name="PATH_TO_ASSOCIATIONS" value="$(find rds_slam)/config/RGB-D/associations/fr3_walk_xyz.txt" />
+    <arg name="PATH_TO_VOCABULARY" value="/root/catkin_ws/src/RDS-SLAM/SLAM/Vocabulary/ORBvoc.txt" />
+    <arg name="PATH_TO_SETTINGS_FILE" value="/root/catkin_ws/src/RDS-SLAM/SLAM/config/RGB-D/TUM3.yaml" />
+    <arg name="PATH_TO_SEQUENCE" value="/root/Dataset/rgbd_dataset_freiburg3_walking_xyz" />
+    <arg name="PATH_TO_ASSOCIATIONS" value="/root/catkin_ws/src/RDS-SLAM/SLAM/config/RGB-D/associations/fr3_walk_xyz.txt" />
 
     <node name="rds_slam_tum" pkg="rds_slam" type="Dynamic_RGBD" args="$(arg PATH_TO_VOCABULARY) $(arg PATH_TO_SETTINGS_FILE) $(arg PATH_TO_SEQUENCE) $(arg PATH_TO_ASSOCIATIONS)" output="screen">
         <param name="cnn_method" type="string" value="segnet" />

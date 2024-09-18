@@ -1,8 +1,8 @@
 <launch>
-    <rosparam file="$(find maskrcnn_ros)/params/param.yaml" command="load" />
-    <arg name="bagfile" value="/root/Dataset/TUM/freiburg3/rgbd_dataset_freiburg3_walking_xyz.bag" />
+    <rosparam file="/root/catkin_ws/src/RDS-SLAM/MaskRCNN_ROS/params/param.yaml" command="load" />
+    <arg name="bagfile" value="/root/Dataset/rgbd_dataset_freiburg3_walking_xyz.bag" />
     <arg name="save_result" value="false" />
-    <arg name="result_dir" value="$(find maskrcnn_ros)/results" />
+    <arg name="result_dir" value="/root/catkin_ws/src/RDS-SLAM/MaskRCNN_ROS/results" />
 
     <node pkg="maskrcnn_ros" type="action_client" name="maskrcnn_action_client" output="screen" launch-prefix="gdb -ex run --args" >
         <param name="bagfile_name" type="str" value="$(arg bagfile)" />
